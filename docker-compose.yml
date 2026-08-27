@@ -1,0 +1,26 @@
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: docker/jupyter/Dockerfile
+
+    container_name: rag-jupyter
+
+    ports:
+      - "8888:8888"
+
+    volumes:
+      - ./notebooks:/workspace/notebooks
+      - ./src:/workspace/src
+      - ./datasets:/workspace/datasets
+      - ./benchmarks:/workspace/benchmarks
+      - ./tests:/workspace/tests
+      - ./docs:/workspace/docs
+      - ./examples:/workspace/examples
+
+    working_dir: /workspace
+
+    environment:
+      PYTHONPATH: /workspace/src
+
+    restart: unless-stopped

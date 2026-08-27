@@ -1,0 +1,7 @@
+[project]
+name = "rag-engineering"
+version = "0.1.0"
+description = "Learning and engineering production RAG systems"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
